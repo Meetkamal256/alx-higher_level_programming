@@ -4,7 +4,6 @@ listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *newNode, *buffer1, *buffer2;
 
-
 	newNode = malloc(sizeof(listint_t));
 	if (!newNode)
 		return (NULL);
@@ -29,7 +28,7 @@ listint_t *insert_node(listint_t **head, int number)
 				break;
 			buffer1 = buffer1->next;
 		}
-		
+
 		if (buffer1->next)
 			newNode->next = buffer1->next;
 		else
@@ -38,4 +37,4 @@ listint_t *insert_node(listint_t **head, int number)
 	}
 
 	return (*head);
-}	
+}
