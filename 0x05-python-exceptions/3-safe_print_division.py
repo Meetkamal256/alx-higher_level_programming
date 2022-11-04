@@ -1,13 +1,10 @@
 #!/usr/bin/python3
-
 def safe_print_division(a, b):
-    print("Inside result: ", end='')
+    """Returns the division of a by b."""
     try:
-        c = str(a/b)
-
-    except (ZeroDivisionError,):
-        c = "None"
-
-    print(c)
-    return c
-    
+        div = a / b
+    except (TypeError, ZeroDivisionError):
+        div = None
+    finally:
+        print("Inside result: {}".format(div))
+    return (div)

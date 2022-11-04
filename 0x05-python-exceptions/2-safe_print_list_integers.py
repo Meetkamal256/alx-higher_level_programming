@@ -1,14 +1,11 @@
 #!/usr/bin/python3
-
 def safe_print_list_integers(my_list=[], x=0):
-    if my_list == [] or x == 0:
-        return
-    i = 0
-    while i < x:
+    count = 0
+    for i in range(x):
         try:
             print("{:d}".format(my_list[i]), end="")
-        except (IndexError, ValueError):
-            break
-        i += 1
+            count += 1
+        except (ValueError, TypeError):
+            pass
     print()
-    return i
+    return (count)

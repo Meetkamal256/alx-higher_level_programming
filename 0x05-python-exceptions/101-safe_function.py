@@ -1,19 +1,10 @@
 #!/usr/bin/python3
-from sys import stderr
+import sys
 
 
 def safe_function(fct, *args):
     try:
-        return float(fct(*args))
-    except IndexError:
-        print("Exception: list index out of range", file=stderr)
-        return None
-    except ValueError:
-        print("Exception: ValueError", file=stderr)
-        return None
-    except ZeroDivisionError:
-        print("Exception: division by zero", file=stderr)
-        return None
-    except TypeError:
-        print("Exception: the type is wrong", file=stderr)
+        return fct(*args)
+    except Exception as e:
+        print("Exception: {}".format(e), file=sys.stderr)
         return None
